@@ -152,7 +152,7 @@
 }
 .project-video video {
     width: 100%; /* Make video take full width */
-    max-height: 300px; /* Prevent video from being too tall */
+  
     height: auto; /* Maintain aspect ratio */
 }
 
