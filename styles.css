@@ -561,20 +561,12 @@
   .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    grid-gap: 30px; /* Adds space between the columns */
+    grid-gap: 30px ; /* Adds space between the columns */
+    row-gap: 20px;
     justify-items: center; /* Center the skill cards horizontally */
 }
      
-    
-    .project-card{
-        flex-direction: column;
-        width: 100%;
-    }
-    .project-video{
-      height: auto;
-      width: auto;
-    }
-    .about-content{
+    .about-section{
       font-size: 0.8rem;
     }
     
