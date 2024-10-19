@@ -561,17 +561,32 @@
   .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    grid-gap: 30px ; /* Adds space between the columns */
+    grid-gap: 30px; /* Adds space between the columns */
     row-gap: 20px;
     justify-items: center; /* Center the skill cards horizontally */
+    grid-auto-rows: 1fr; /* Ensure all rows have the same height */
 }
+
+.skill-card {
+    width: 100%; /* Ensure each skill card takes full width */
+    height: 100%; /* Ensure each skill card takes full height */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+}
+
      
     .about-section{
-      font-size: 0.8rem;
+      font-size: 0.5rem;
     }
     
-      .skill-card {
-          height: auto; /* Adjust height for mobile */
-          text-align: center;
-      }
+    .project-card {
+      flex-direction: column; /* Stack elements vertically for mobile */
+      margin: 10px 0; /* Optional: Add margin between cards */
+  }
+  
+  .project-container {
+      grid-template-columns: 1fr; /* Ensure one column for mobile */
+  }
   }
