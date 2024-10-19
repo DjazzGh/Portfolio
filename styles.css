@@ -151,7 +151,7 @@
   }
 
   .project-video video {
-      width: 100%; /* Make sure videos take the full width of the screen */
+      width: 50%; 
       max-height: 200px; /* Prevent video from being too tall */
       height: auto; /* Maintain aspect ratio */
   }
@@ -164,7 +164,8 @@
   }
 
   .skill-card {
-      height: auto; /* Adjust height for mobile */
+    width: 100px;
+      height:100px ; /* Adjust height for mobile */
       text-align: center;
   }
 }
@@ -509,16 +510,7 @@
       align-items: center;
     }
   
-    .project-container {
-      width: 100%; /* Full width */
-      max-height: 100px; /* Set a limit for the height (adjust as needed) */
-      overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
-      padding: 20px; /* Optional padding */
-      box-sizing: border-box; /* Ensures padding is included in total width/height */
-  }
+  
   
     .profile-container {
       padding: 20px;
