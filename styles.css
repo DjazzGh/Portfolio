@@ -573,15 +573,25 @@
 
   /* Increase the general text size */
   .profile-description,
-  .about-section p,
-  .skill-card h3,
-  .project-details p,
-  .contact-info p {
-      font-size: 1.5rem; /* Increase paragraph and card text sizes */
+   {
+      font-size: 1.3rem; /* Increase paragraph and card text sizes */
   }
 
-  /* For buttons in the navigation bar */
-  .nav-links button {
-      font-size: 1.2rem; /* Make the navigation text bigger */
-  }
+/* Mobile styles for screens less than 768px */
+@media (max-width: 768px) {
+    .nav-links button {
+        font-size: 4vw; /* Font size responsive to screen width */
+        padding: 8px 5px; /* Decrease padding to fit text better */
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
+    }
+}
+
+/* For very small mobile screens (less than 480px wide) */
+@media (max-width: 480px) {
+    .nav-links button {
+        font-size: 3.5vw; /* Slightly smaller responsive font for very small screens */
+        padding: 6px 5px; /* Adjust padding for smaller screens */
+    }
+}
+
 }
