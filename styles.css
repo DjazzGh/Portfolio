@@ -543,7 +543,7 @@
 @media (max-width: 768px) {
   /* Increase the size of section titles (headers) */
   .section-title {
-      font-size: 1.5rem; /* Increase the header font size */
+      font-size: 1.2rem; /* Increase the header font size */
   }
 
   /* Increase the profile name font size */
@@ -562,7 +562,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     grid-gap: 30px; /* Adds space between the columns */
-    row-gap: 20px;
+    row-gap: 30px;
     justify-items: center; /* Center the skill cards horizontally */
     grid-auto-rows: 1fr; /* Ensure all rows have the same height */
 }
