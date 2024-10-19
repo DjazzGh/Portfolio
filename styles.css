@@ -1,187 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Ghomari Djazia</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div id="app">
-        <div class="sidebar">
-            <div class="portfolio-title">
-                <h1>My portfolio</h1>
-            </div>
-            <nav class="nav-links">
-                <button onclick="scrollToSection('about')">About</button>
-                <button onclick="scrollToSection('projects')">Projects</button>
-                <button onclick="scrollToSection('skills')">Skills</button>
-                <button onclick="scrollToSection('contact')">Contact</button>
-            </nav>
-        </div>
-        <main class="main-content">
-            <!-- Profile Section -->
-            <div class="profile-container">
-                <div class="image-container">
-                    <img src="pic.jpg" alt="Profile" class="profile-picture" id="imageprofile" />
-                </div>
-                <h1 class="profile-name" style="color: #5410a2;">Ghomari Djazia</h1>
-                <p class="profile-description">20 year old Computer Science Student | Software development enthusiast</p>
-            </div>
-            <!-- About Section -->
-            <section id="about" class="about-section">
-                <h2 class="section-title" style="color: #621cb3;">About Me</h2>
-                <div class="about-content">
-                    <div class="interest-section">
-                        <h3>Fields of Interest</h3>
-                        <dl>
-                            <li>Web Development</li>
-                            <li>Mobile Development</li>
-                            <li>UI/UX Design</li>
-                            <li>Cybersecurity</li>
-                        </dl>
-                    </div>
-                    <div class="education-section">
-                        <h3>Education</h3>
-                        <p>
-                            <img src="Logo.png" alt="USTHB logo" width="50" height="50" />
-                            University of Science and Technologies (USTHB) <br/>
-                            2022 - Present <br/>
-                            Major: Computer Science <br/>
-                            Specialty: Cyber Security
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <!-- Projects Section -->
-            <section id="projects" class="projects-section">
-                <h2 class="section-title" style="color: #621cb3;">Projects</h2>
-                <div class="project-container">
-                    <div class="project-card">
-                        <video src="Hotel.mov" loop muted autoplay playsinline height="200px" width="300px"></video>
-                        <div class="project-details">
-                            <h3>Hotel Management App</h3>
-                            <p>I developed a hotel management app using Java. This application efficiently manages bookings, guest information, and billing processes while providing features for checking room availability and generating reports.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <video src="Todo.mov" loop muted autoplay playsinline height="200px" width="300px"></video>
-                        <div class="project-details">
-                            <h3>To do List Website</h3>
-                            <p>A to-do list website made with HTML, CSS, and JavaScript to help users efficiently manage their tasks. A website that features a clean and intuitive interface, allowing users to add, edit, and delete tasks seamlessly.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <video src="Recipe.mov" loop muted autoplay playsinline height="200px" width="300px"></video>
-                        <div class="project-details">
-                            <h3>Mobile Recipe App</h3>
-                            <p>A recipe app made using Flutter and SQLite to provide users with an interactive platform for discovering and managing recipes. This app allows users to browse, search, and save their favorite recipes while storing data locally for offline access.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Skills Section -->
-            <section id="skills" class="skills-section">
-                <h2 class="section-title" style="color: #621cb3;">Skills</h2>
-                <div class="skills-container">
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.4rem; ">Front-end Development</h3>
-                        
-                        <p >
-                            <span class="html-icon" title="HTML"></span>
-                            <span class="css-icon" title="CSS"></span>
-                            <span class="javascript-icon" title="JavaScript"></span>
-                            <span class="react-icon" title="React"></span>
-                        </p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.5rem; ">Mobile Development</h3>
-                        <p>
-                            <span class="flutter-icon" title="Flutter"></span>
-                        </p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.4rem; ">Programming Languages</h3>
-                        <p>
-                            <span class="c-icon" title="C"></span>
-                            <span class="java-icon" title="Java"></span>
-                            <span class="python-icon" title="Python"></span>
-                        </p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.5rem; ">Tools</h3>
-                        <p>
-                            <span class="Git-icon" title="Git"></span>
-                            <span class="Docker-icon" title="Docker"></span>
-                        </p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.5rem; ">Languages</h3>
-                        <p>English, French, Arabic</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3 style="font-size: 1.5rem; ">Soft skills</h3>
-                        <p>Teamwork, Creativity</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Contact Section -->
-            <section id="contact" class="contact-section">
-                <h2 class="section-title" style="color: #621cb3;">Contact</h2>
-                <div class="contact-info">
-                    <p>📞 Phone: +213 552 11 03 41</p>
-                    <p>📍 Location: Algiers, Algeria</p>
-                    <p>📧 Email: djazia.gh77@gmail.com</p>
-                    <p><a href="https://www.linkedin.com/in/djazia-ghomari-6994842b9/" target="_blank"><i class="fab fa-linkedin linkedin"></i>LinkedIn</a></p>
-                    <p><a href="https://github.com/DjazzGh" target="_blank"><i class="fab fa-github gitHub"></i>GitHub</a></p>
-                </div>
-            </section>
-        </main>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-‎script.js
-+37
-Original file line number	Original file line	Diff line number	Diff line change
-@@ -0,0 +1,37 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                } else {
-                    entry.target.classList.remove("animate");
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
-});
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    const buttons = document.querySelectorAll('.nav-links button');
-    
-    buttons.forEach(button => {
-        button.classList.remove('active');
-    });
-    const activeButton = document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`);
-    activeButton.classList.add('active');
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-‎styles.css
-+538
-Original file line number	Original file line	Diff line number	Diff line change
-@@ -0,0 +1,538 @@
 /* Main App Layout */
 .App {
     display: flex;
@@ -274,15 +90,18 @@ Original file line number	Original file line	Diff line number	Diff line change
     overflow: hidden;
     font-family: 'Open Sans';
 }
+
 .project-video {
     flex: 1; /* Allow video to take available space */
     max-width: 300px; /* Set a maximum width for the video */
 }
+
 .project-video video {
     max-width: 200px; /* Full width for the video */
     max-height: 200px; /* Maintain aspect ratio */
     object-fit: cover;
 }
+
 .project-details {
     padding: 20px;
     display: flex;
@@ -291,6 +110,7 @@ Original file line number	Original file line	Diff line number	Diff line change
     text-align: left;
     flex: 2; /* Allow text to take more space */
 }
+
   
   .project-details h3 {
     font-size: 1.5rem;
@@ -310,11 +130,13 @@ Original file line number	Original file line	Diff line number	Diff line change
     background-color: #f9f9f9;
     text-align: center;
 }
+
 .skills-container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
+
 .skill-card {
     flex: 1;
     padding: 20px;
@@ -331,34 +153,42 @@ Original file line number	Original file line	Diff line number	Diff line change
     justify-content: center;
     align-items: center;
 }
+
 .skill-card p {
   display: block;
     align-items: center; /* Aligns items vertically */
     margin: 10px 0; /* Add some margin for spacing */
 }
+
 .skill-card p span {
     margin-right: 5px; /* Spacing between icons and text */
 }
+
 .skill-card:hover {
     transform: scale(1.2);
     background-color: #9c27b0;
 }
+
 .short-info {
     font-size: 1.2rem;
     color: #fff;
     margin: 10px 0;
 }
+
 .more-info {
     display: none; /* Hide more info initially */
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 .skill-card:hover .more-info {
     display: block; /* Show more info on hover */
 }
+
 .skill-card:hover .short-info {
     display: none; /* Hide short info on hover */
 }
+
   
   /* Contact Section */
   .contact-section {
@@ -662,11 +492,13 @@ Original file line number	Original file line	Diff line number	Diff line change
  
   text-align: center;
 }
+
 #imageprofile {
   width: 250px;
   height: 250px;
   object-fit: cover;
   margin-bottom: 20px;
+
   clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Larger shadow for better visibility */
   transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth rotation and shadow transition */
@@ -674,10 +506,14 @@ Original file line number	Original file line	Diff line number	Diff line change
   position: relative; /* Ensure the shadow is rendered correctly */
   z-index: 1; /* Ensure profile picture is above other elements */
 }
+
 #imageprofile:hover {
   transform: rotate(200deg) translateY(-15px); /* Rotate and lift further on hover */
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 } 
+
+
+
 /* Profile Name Styling */
 .profile-name {
   font-size: 2.5rem; /* Larger font for the name */
@@ -686,6 +522,7 @@ Original file line number	Original file line	Diff line number	Diff line change
   color: #382b47; /* Dark gray */
   margin-bottom: 10px;
 }
+
 /* Profile Description Styling */
 .profile-description {
   font-size: 1.3rem;
