@@ -135,28 +135,25 @@
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-    .project-card {
-        flex-direction: column; /* Stack elements vertically for mobile */
-        margin: 10px 0; /* Optional: Add margin between cards */
-    }
-    
-    .project-container {
-        grid-template-columns: 1fr; /* Ensure one column for mobile */
-    }
+  .project-card {
+    flex-direction: column; /* Stack elements vertically for mobile */
+    margin: 10px 0; /* Add margin between cards */
+    /* Remove any fixed height or width that might cause overflow */
+    height: auto; /* Allow it to grow based on content */
 }
 
-@media (max-width: 768px) {
-  .project-container {
-      grid-template-columns: 1fr; /* Single column on mobile */
-  }
-
-  .project-video video {
-      width: 50%; 
-      max-height: 200px; /* Prevent video from being too tall */
-      height: auto; /* Maintain aspect ratio */
-  }
+.project-container {
+    grid-template-columns: 1fr; /* Ensure one column for mobile */
+    overflow: hidden; /* Prevent scrolling */
+    padding: 0; /* Remove padding if it's causing overflow */
 }
-@media (max-width: 768px) {
+
+.project-video video {
+    width: 100%; /* Make video take full width */
+    max-height: 200px; /* Prevent video from being too tall */
+    height: auto; /* Maintain aspect ratio */
+}
+
   .skills-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* 2 columns */
@@ -169,6 +166,7 @@
       text-align: center;
   }
 }
+
 .project-details {
     padding: 20px;
     display: flex;
