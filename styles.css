@@ -147,10 +147,12 @@
     overflow: hidden; /* Prevent scrolling */
     padding: 0; /* Remove padding if it's causing overflow */
 }
-
+.section-title{
+  font-family: 'Roboto';
+}
 .project-video video {
     width: 100%; /* Make video take full width */
-    max-height: 200px; /* Prevent video from being too tall */
+    max-height: 300px; /* Prevent video from being too tall */
     height: auto; /* Maintain aspect ratio */
 }
 
