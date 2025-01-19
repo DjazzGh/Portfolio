@@ -33,7 +33,7 @@ function scrollToSection(sectionId) {
     activeButton.classList.add('active');
 
     if (section) {
-        const offset = 100; 
+        const offset = 300; 
         const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
 
         window.scrollTo({
