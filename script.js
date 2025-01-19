@@ -40,3 +40,24 @@ function scrollToSection(sectionId) {
         });
     }
 }
+const nameText = "Ghomari Djazia"; // Text to be typed
+const typedNameElement = document.getElementById("typed-name");
+const cursorElement = document.querySelector(".cursor");
+
+let index = 0;
+
+function typeName() {
+  if (index < nameText.length) {
+    typedNameElement.textContent += nameText.charAt(index);
+    index++;
+    setTimeout(typeName, 100); 
+  } else {
+    setTimeout(() => {
+      typedNameElement.textContent = ""; 
+      index = 0; 
+      typeName(); 
+    }, 1000); 
+  }
+}
+
+typeName();
