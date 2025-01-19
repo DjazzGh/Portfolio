@@ -22,24 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     const buttons = document.querySelectorAll('.nav-links button');
-    
 
     buttons.forEach(button => {
         button.classList.remove('active');
     });
 
-
     const activeButton = document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`);
     activeButton.classList.add('active');
 
     if (section) {
-        const offset = 300; 
-        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+        const offset = 100; 
+        const sectionTop = section.offsetTop;
 
         window.scrollTo({
-            top: sectionPosition - offset,
+            top: sectionTop - offset,
             behavior: 'smooth'
         });
     }
 }
-
