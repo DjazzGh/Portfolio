@@ -23,15 +23,23 @@ function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     const buttons = document.querySelectorAll('.nav-links button');
     
+
     buttons.forEach(button => {
         button.classList.remove('active');
     });
+
 
     const activeButton = document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`);
     activeButton.classList.add('active');
 
     if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        const offset = 100; 
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+            top: sectionPosition - offset,
+            behavior: 'smooth'
+        });
     }
 }
 
