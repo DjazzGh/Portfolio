@@ -31,7 +31,7 @@ function scrollToSection(sectionId) {
     activeButton.classList.add('active');
 
     if (section) {
-        const offset = 100; 
+        const offset = 50; 
         const sectionTop = section.offsetTop;
 
         window.scrollTo({
