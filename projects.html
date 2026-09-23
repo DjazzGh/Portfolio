@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Projects — Ghomari Djazia</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;
+  --bg2:#eff6ff;
+  --card:#ffffff;
+  --border:#dbeafe;
+  --border2:#bfdbfe;
+  --text:#0f172a;
+  --muted:#64748b;
+  --muted2:#94a3b8;
+  --accent:#2563eb;
+  --accent2:#1d4ed8;
+  --accent-light:#eff6ff;
+  --nav-bg:rgba(255,255,255,0.82);}
+[data-theme="dark"]{
+  --bg:#0a0f1f;
+  --bg2:#111b2f;
+  --card:#12213a;
+  --border:#1e3a5f;
+  --border2:#244a78;
+  --text:#dbeafe;
+  --muted:#7ea0c8;
+  --muted2:#a3c0e0;
+  --accent:#3b82f6;
+  --accent2:#1d4ed8;
+  --accent-light:#132a4a;
+  --nav-bg:rgba(10,15,31,0.95);}
+[data-theme="dark"] .btn-ghost{background:var(--card);border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .btn-ghost:hover{background:rgba(37,99,235,0.10);border-color:var(--accent);color:var(--accent)}
+[data-theme="dark"] .tag{background:#12213a;border-color:#1e3a5f;color:#a3c0e0}
+[data-theme="dark"] .tag:hover{background:#132a4a;border-color:var(--accent);color:var(--accent)}
+[data-theme="dark"] .btn-nav{background:var(--card);border-color:var(--border);color:var(--text)}
+[data-theme="dark"] nav{background:#0a0f1f;border-color:#1e3a5f}
+html{scroll-behavior:smooth;background:var(--bg);background-color:var(--bg);transition:background .3s;overscroll-behavior:none}
+html[data-theme="dark"]{background:var(--bg);background-color:#0a0f1f}
+body{font-family:'Inter',sans-serif;min-height:100vh;background:var(--bg);background-color:var(--bg);color:var(--text);line-height:1.6;transition:background .3s, color .3s;position:relative;isolation:isolate;overscroll-behavior:none}
+body::before{
+  content:"";position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%232563eb' stroke-width='0.7' opacity='0.58'%3E%3Cpath d='M36 32 L48 38 L48 50 L36 58 L24 50 L24 38 Z'/%3E%3Ccircle cx='36' cy='44' r='1.4' fill='%232563eb' stroke='none'/%3E%3Crect x='96' y='34' width='16' height='11' rx='1.2'/%3E%3Cpath d='M100 34 V30 a4 4 0 0 1 8 0 v4'/%3E%3Cpath d='M168 30 L162 38 L168 46 M182 30 L188 38 L182 46 M172 36 H178'/%3E%3Ctext x='36' y='112' font-family='JetBrains Mono, monospace' font-size='7' fill='%232563eb' opacity='0.75'%3E010110%3C/text%3E%3Ctext x='164' y='112' font-family='JetBrains Mono, monospace' font-size='7' fill='%232563eb' opacity='0.75'%3E101001%3C/text%3E%3Cpath d='M20 148 H50 V164 H78'/%3E%3Ccircle cx='50' cy='164' r='1.6' fill='%232563eb' stroke='none'/%3E%3Cpath d='M180 148 H210 V168 H240'/%3E%3Ccircle cx='210' cy='168' r='1.6' fill='%232563eb' stroke='none'/%3E%3Cpath d='M36 200 L36 216 L52 216 L52 232'/%3E%3Ccircle cx='52' cy='232' r='1.6' fill='%232563eb' stroke='none'/%3E%3Cpath d='M160 200 L160 220 L180 220'/%3E%3Ccircle cx='180' cy='220' r='1.6' fill='%232563eb' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:320px 320px;opacity:0.11;pointer-events:none;z-index:-1;
+}
+
+
+[data-theme="dark"] body::before{opacity:0.18}
+@media (prefers-color-scheme: dark){
+  html:not([data-theme="light"]){background:#0a0f1f;background-color:#0a0f1f}
+  html:not([data-theme="light"]) body{background:#0a0f1f;background-color:#0a0f1f}
+}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+/* NAV — glassy, centered, theme-aware */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--nav-bg);
+  backdrop-filter:blur(24px) saturate(1.6);
+  -webkit-backdrop-filter:blur(24px) saturate(1.6);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 48px;
+  width:100%;
+  transition:padding .3s, background .3s, box-shadow .3s, border-color .3s;
+}
+nav.scrolled{padding:10px 48px;box-shadow:0 8px 28px rgba(37,99,235,0.10);}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;flex-shrink:0}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.theme-toggle .theme-icon{position:absolute;transition:opacity .3s, transform .3s}
+.theme-toggle .sun-icon{opacity:1;transform:rotate(0deg) scale(1)}
+.theme-toggle .moon-icon{opacity:0;transform:rotate(-90deg) scale(0.5)}
+[data-theme="dark"] .theme-toggle .sun-icon{opacity:0;transform:rotate(90deg) scale(0.5)}
+[data-theme="dark"] .theme-toggle .moon-icon{opacity:1;transform:rotate(0deg) scale(1)}
+.nav-logo{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;color:var(--text);display:flex;align-items:center;gap:7px;text-transform:uppercase}
+.nav-logo i{width:7px;height:7px;background:var(--accent);border-radius:1px;display:block}
+.nav-logo i{width:10px;height:10px;background:var(--accent);border-radius:2px;display:block;animation:logoPulse 2.2s ease-in-out infinite}
+@keyframes logoPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0.25)}50%{box-shadow:0 0 0 6px rgba(37,99,235,0)}}
+.nav-links{display:flex;gap:18px;list-style:none;font-size:10.5px;font-weight:500;color:var(--muted);align-items:center}
+.nav-links li{animation:fadeUp .6s ease both}
+.nav-links li:nth-child(1){animation-delay:.05s}.nav-links li:nth-child(2){animation-delay:.1s}.nav-links li:nth-child(3){animation-delay:.15s}.nav-links li:nth-child(4){animation-delay:.2s}.nav-links li:nth-child(5){animation-delay:.25s}.nav-links li:nth-child(6){animation-delay:.3s}
+.nav-links a{position:relative;padding:2px 0;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--accent);transition:width .3s cubic-bezier(.16,1,.3,1)}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--accent)}
+.btn-nav{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;letter-spacing:0.02em;padding:6px 10px;border:1px solid var(--border2);background:var(--card);color:var(--text);border-radius:6px;display:inline-flex;gap:5px}
+.btn-nav:hover{background:#1d4ed8;border-color:#1d4ed8;transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,0.3)}
+.nav-logo{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.14em;color:var(--text);display:flex;align-items:center;gap:7px;text-transform:uppercase}
+.nav-logo i{width:7px;height:7px;background:var(--accent);border-radius:1px;display:block}
+.nav-logo span{width:8px;height:8px;background:var(--accent);border-radius:2px;display:inline-block}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.02em;padding:9px 16px;border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:999px;transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.back-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);transform:translateY(-1px);box-shadow:0 6px 16px rgba(37,99,235,0.12)}
+.back-btn svg{width:14px;height:14px;transition:transform .2s;flex-shrink:0}
+.back-btn:hover svg{transform:translateX(-3px)}
+[data-theme="dark"] .back-btn{border-color:var(--border);color:var(--muted)}
+[data-theme="dark"] .back-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(37,99,235,0.14)}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+
+.hero{max-width:none;width:100%;padding:28px 48px 32px}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.02em}
+.hero p{font-size:13px;color:var(--muted);max-width:640px;margin-top:8px;line-height:1.6}
+.filter-bar{max-width:none;width:100%;padding:16px 48px;display:flex;gap:8px;flex-wrap:wrap;position:static;background:transparent;border:none}
+.filter-btn{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 14px;border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:6px;cursor:pointer;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.wrap{max-width:none;width:100%;padding:20px 48px 32px;display:flex;flex-direction:column;align-items:stretch}
+.category{margin-top:28px;width:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:0 1px 6px rgba(0,0,0,0.04);transition:background .3s, border-color .3s}
+.category:first-child{margin-top:0}
+.cat-head{display:flex;gap:10px;align-items:center;margin-bottom:12px;border-bottom:1px solid var(--border);padding-bottom:8px}
+.cat-title{font-size:14px;font-weight:700}
+.cat-count{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:var(--card);border:1px solid var(--border);padding:4px 10px;border-radius:999px}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:all .2s}
+.proj-card:hover{border-color:#e2dff5;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,0.08)}
+.proj-head{height:200px;background:linear-gradient(135deg,#2563eb 0%,#60a5fa 100%);display:grid;place-items:center;position:relative;overflow:hidden;flex-shrink:0}
+.proj-head img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.proj-card:hover .proj-head img{transform:scale(1.04)}
+/* Mobile images — show full height inside same 200px container, no crop */
+.proj-head.proj-head--contain{height:200px;max-height:200px;background:#f8fafc;padding:0;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.proj-head.proj-head--contain img{width:auto;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;display:block}
+[data-theme="dark"] .proj-head.proj-head--contain{background:var(--card);border-bottom:1px solid var(--border)}
+.proj-icon{width:28px;height:28px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;border-radius:7px;display:grid;place-items:center;font-size:13px}
+.proj-body{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.proj-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase}
+.proj-title{font-size:13px;font-weight:700;line-height:1.3}
+.proj-desc{font-size:11px;color:var(--muted);line-height:1.6;flex:1}
+.proj-stack{font-family:'JetBrains Mono',monospace;font-size:9px;color:#9a92b8;border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
+.proj-link{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent)}
+.hidden{display:none !important}
+
+/* footer social — blue in light mode */
+.footer-social{display:flex;gap:8px;align-items:center}
+.footer-social a{
+  width:28px;height:28px;border-radius:6px;
+  background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-size:11px;
+  border:1px solid var(--accent);transition:all .2s;
+}
+.footer-social a:hover{background:var(--accent2);border-color:var(--accent2);transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,0.22)}
+[data-theme="dark"] .footer-social a{background:#1e3a5f;border-color:#244a78;color:#dbeafe}
+[data-theme="dark"] .footer-social a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+footer{max-width:none;width:100%;padding:16px 48px;background:#050510;color:#6a658a;font-family:'JetBrains Mono',monospace;font-size:9px;display:flex;justify-content:space-between;border:none}
+@media(max-width:900px){
+  .hero{padding:32px 20px 20px}
+  .filter-bar{padding:12px 20px;gap:6px}
+  .wrap{padding:16px 20px 24px}
+  .category{padding:16px}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  footer{padding:14px 20px}
+}
+@media(max-width:600px){
+  .hero{padding:24px 16px 16px}
+  .hero h1{font-size:24px}
+  .hero p{font-size:12px}
+  .filter-bar{padding:10px 16px;gap:6px}
+  .filter-btn{font-size:10px;padding:6px 10px}
+  .wrap{padding:12px 16px 20px}
+  .category{padding:14px;margin-top:16px}
+  .cat-head{flex-wrap:wrap;gap:8px}
+  .projects-grid{grid-template-columns:1fr}
+  .proj-head{height:180px}
+  .proj-head.proj-head--contain{height:180px;max-height:180px}
+  .proj-desc{font-size:11px}
+  footer{flex-direction:column;gap:8px;text-align:center;padding:12px 16px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:20px}
+  .filter-bar{gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-top">
+    <a href="index.html" class="back-btn" aria-label="Back to home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg> Back to home</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="theme-icon sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="theme-icon moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+  </div>
+  <div class="mono" style="font-size:8px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase">PORTFOLIO · 10 WORKS</div>
+  <h1>Project Archive</h1>
+  
+</div>
+<div class="filter-bar" id="filterBar">
+  <button class="filter-btn active" data-filter="all">All — 10</button>
+  <button class="filter-btn" data-filter="cybersecurity">Cybersecurity — 2</button>
+  <button class="filter-btn" data-filter="development">Development — 7</button>
+  
+  <button class="filter-btn" data-filter="ai">AI — 1</button>
+</div>
+<div class="wrap">
+  <div class="category" data-cat="cybersecurity"><div class="cat-head"><div class="cat-title">Cybersecurity</div><span class="cat-count">2 projects</span></div><div class="projects-grid">
+    <div class="proj-card" data-cat="cybersecurity"><div class="proj-head"><img src="ssh.png" alt="SSH Brute-Force Detection Lab" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Cybersecurity</div><div class="proj-title">SSH Brute-Force Detection Lab</div><div class="proj-desc">Created a security monitoring lab that simulates a real-world SSH brute-force attack and demonstrates end-to-end detection, analysis, and automated response using Wazuh as the SIEM/XDR platform and Kali Linux as the attacker machine.</div><div class="proj-stack">Kali Linux · Ubuntu · Wazuh SIEM</div><a class="proj-link" href="https://github.com/DjazzGh/ssh-brute-force-detection-lab-wazuh">View Lab →</a></div></div>
+    <div class="proj-card" data-cat="cybersecurity"><div class="proj-head"><img src="Pentest.jpeg" alt="Penetration Test Lab - Metasploitable2" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Cybersecurity</div><div class="proj-title">Penetration Test Lab - Metasploitable2</div><div class="proj-desc">Executed a full-cycle penetration test on a Linux target, leveraging Nmap, Gobuster, Nikto, and John the Ripper to identify, exploit, and document security vulnerabilities, culminating in root access and a comprehensive remediation report.</div><div class="proj-stack">Kali Linux · Nmap · Metasploit</div><a class="proj-link" href="https://github.com/DjazzGh/Pentesting">View Writeup →</a></div></div>
+  </div></div>
+  
+  <div class="category" data-cat="development">
+    <div class="cat-head"><div class="cat-title">Development</div><span class="cat-count">7 projects</span></div>
+    <div class="projects-grid">
+
+    <div class="proj-card" data-cat="development"><div class="proj-head"><img src="Travel_website.jpeg" alt="Travel planning website" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Web Development</div><div class="proj-title">Travel Planning Website</div><div class="proj-desc">Developed a dynamic travel planning website that allows users to create personalized travel itineraries by inputting details . Designed an intuitive user interface to enhance user experience and implemented robust backend functionality to store and manage user-generated travel plans efficiently.</div><div class="proj-stack">HTML · CSS · JavaScript · PHP · MySQL</div><a class="proj-link" href="https://github.com/DjazzGh/Travel-planning-website">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head"><img src="TalkFlow.jpeg" alt="Real Time Chat App" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Web Development</div><div class="proj-title">Real Time Chat App</div><div class="proj-desc">A real-time chat application that enables users to exchange instant messages and monitor online statuses through a seamless, responsive interface. It incorporates secure user authentication, ensures reliable conversation flow, and implements comprehensive error handling on both client and server sides.</div><div class="proj-stack">React.js · Node.js · Socket.io · MongoDB · Express</div><a class="proj-link" href="https://github.com/DjazzGh/Real-time-chat-app">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head"><img src="SmartSpendAI.png" alt="SmartSpendAI - Expense Tracker AI" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Web Development</div><div class="proj-title">SmartSpendAI - Expense Tracker AI</div><div class="proj-desc">An expense tracker that leverages artificial intelligence to help users manage their finances effectively. It provides AI-powered insights into spending patterns, automates expense categorization, and offers a smart dashboard for visualizing financial data, empowering users to achieve their financial goals with ease.</div><div class="proj-stack">Next.js · Tailwind css · PostgreSQL</div><a class="proj-link" href="https://github.com/DjazzGh/AI_Expense_Tracker_Website">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head"><img src="hotel.jpeg" alt="SmartSpendAI - Expense Tracker AI" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Other Languages</div><div class="proj-title">Hotel Management App</div><div class="proj-desc">Developed a hotel management system with room allocation, billing, and OOP design in Java (Swing) and MySQL.</div><div class="proj-stack">Java</div><a class="proj-link" href="https://github.com/DjazzGh/Hotel_Management_App">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head"><img src="QCS_Python.jpeg" alt="QCS Console Game" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Other Languages</div><div class="proj-title">QCS Console Game</div><div class="proj-desc">A console-based QCM game with timed questions, scoring system, and history tracking.</div><div class="proj-stack">Python</div><a class="proj-link" href="https://github.com/DjazzGh/Python-QCM-Game">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head proj-head--contain"><img src="recipe.jpeg" alt="Recipe App" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Mobile Development</div><div class="proj-title">Recipe App</div><div class="proj-desc">Developed a mobile recipe app using Flutter and SQLite, enabling users to browse and save over 50 recipes, implementing state management for smooth navigation.</div><div class="proj-stack">Flutter · SQL Server</div><a class="proj-link" href="https://github.com/DjazzGh/RecipeApp_Flutter">View Project →</a></div></div>
+    <div class="proj-card" data-cat="development"><div class="proj-head proj-head--contain"><img src="Wallet.png" alt="React Native Wallet" loading="lazy"></div><div class="proj-body"><div class="proj-cat">Mobile Development</div><div class="proj-title">React Native Wallet</div><div class="proj-desc">A mobile wallet application built with React Native and Expo that allows users to manage their finances, track transactions, and monitor their balance.</div><div class="proj-stack">React Native · Expo · TypeScript</div><a class="proj-link" href="https://github.com/DjazzGh/React-Native-Wallet-mobile-frontend?tab=readme-ov-file">View Project →</a></div></div>
+
+    </div>
+  </div>
+<div class="category" data-cat="ai"><div class="cat-head"><div class="cat-title">AI</div><span class="cat-count">1 project</span></div><div class="projects-grid">
+    <div class="proj-card" data-cat="ai"><div class="proj-head"><img src="Fashion_MNIST.png" alt="Fashion MNIST Classifier" loading="lazy"></div><div class="proj-body"><div class="proj-cat">AI</div><div class="proj-title">Fashion MNIST Classifier</div><div class="proj-desc">A deep learning application classifies Fashion MNIST clothing images with ~91% test accuracy using a CNN built with TensorFlow and Keras, featuring convolutional layers, dropout, and maxpooling. The 70,000 images were preprocessed with NumPy and PIL. A Streamlit web interface enables real-time predictions with Plotly visualizations for confidence scores. Deployed on Hugging Face for accessibility, with performance metrics.</div><div class="proj-stack">Python · TensorFlow · Keras</div><a class="proj-link" href="https://github.com/DjazzGh/Fashion-MNIST-Classifier">View Project →</a></div></div>
+  </div></div>
+</div>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('theme',t);}catch(e){}}
+const savedTheme = (function(){try{return localStorage.getItem('theme');}catch(e){return null;}})() || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+applyTheme(savedTheme);
+if(themeToggle){themeToggle.addEventListener('click',()=>{const cur=document.documentElement.getAttribute('data-theme');applyTheme(cur==='dark'?'light':'dark');});}
+
+const nav=document.querySelector('nav');if(nav){window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled', window.scrollY>16)},{passive:true});}
+const btns=[...document.querySelectorAll('.filter-btn')];
+const cats=[...document.querySelectorAll('.category')];
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const f=b.dataset.filter;
+  cats.forEach(c=>{c.classList.toggle('hidden', f!=='all' && c.dataset.cat!==f)});
+}));
+
+</script>
+
+</body>
+</html>
