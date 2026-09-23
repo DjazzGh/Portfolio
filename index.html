@@ -560,13 +560,16 @@ section{max-width:none;width:100%;margin:0;padding:96px 48px;background:var(--bg
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 
-/* CONTACT — dark footer like picture */
-.contact-wrap{background:#0a0a1f;border-radius:0;max-width:none;width:100%;margin:0;padding:80px 48px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:20px;align-items:start;border:none}
-.contact-wrap h3{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#fff;line-height:1.15}
-.contact-wrap p{font-size:14px;color:#9a92b8;max-width:520px;margin-top:8px;line-height:1.6}
+/* CONTACT — light blue in light mode, dark footer in dark mode */
+.contact-wrap{background:#dbeafe;border-radius:0;max-width:none;width:100%;margin:0;padding:48px 48px 80px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:20px;align-items:start;border-top:1px solid #bfdbfe}
+.contact-wrap h3{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#0f172a;line-height:1.15}
+.contact-wrap p{font-size:14px;color:#64748b;max-width:520px;margin-top:8px;line-height:1.6}
+[data-theme="dark"] .contact-wrap{background:#0a0a1f;border-top:none}
+[data-theme="dark"] .contact-wrap h3{color:#fff}
+[data-theme="dark"] .contact-wrap p{color:#9a92b8}
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-.mini{ background:#dbeafe;border:1px solid #bfdbfe;border-radius:8px;padding:10px;display:block;text-decoration:none;cursor:pointer;transition:all .25s}
-.mini:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,99,235,0.12);background:#bfdbfe}
+.mini{ background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px;display:block;text-decoration:none;cursor:pointer;transition:all .25s}
+.mini:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,99,235,0.12);background:#ffffff}
 .mini:hover .ml{color:var(--accent)}
 .mini .mi{width:18px;height:18px;background:rgba(37,99,235,0.15);color:var(--accent);border-radius:4px;display:grid;place-items:center;font-size:9px;margin-bottom:6px}
 .mini .ml{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase}
@@ -595,8 +598,9 @@ footer{max-width:none;width:100%;padding:14px 48px;background:#050510;border:non
 
 @media(max-width:900px){
   nav{padding:12px 20px}
+  nav.scrolled{padding:12px 20px}
   .nav-links{gap:14px;font-size:12px}
-  .hero{grid-template-columns:1fr;gap:28px;padding:48px 20px 48px}
+  .hero{grid-template-columns:1fr;gap:28px;padding:64px 20px 48px}
   .about-layout{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr 1fr}
   .skills-grid{grid-template-columns:1fr 1fr}
@@ -604,8 +608,9 @@ footer{max-width:none;width:100%;padding:14px 48px;background:#050510;border:non
   .timeline{padding-left:28px}
   .timeline::before{left:8px}
   .timeline-dot{left:-24px;width:14px;height:14px}
-  .contact-wrap{grid-template-columns:1fr;padding:48px 20px}
-  section{padding:48px 20px}
+  .contact-wrap{grid-template-columns:1fr;padding:48px 20px 64px}
+  section{padding:80px 20px}
+  section + section{margin-top:16px}
   .hero{padding-left:20px;padding-right:20px}
   .mini-grid{grid-template-columns:1fr 1fr}
   .orbit-system{width:260px;height:260px}
@@ -616,13 +621,14 @@ footer{max-width:none;width:100%;padding:14px 48px;background:#050510;border:non
 }
 @media(max-width:600px){
   nav{padding:10px 16px;gap:12px}
+  nav.scrolled{padding:10px 16px}
   .nav-links{position:fixed;top:60px;left:0;right:0;background:var(--card);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:16px 20px;gap:16px;transform:translateY(-115%);opacity:0;pointer-events:none;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .28s;box-shadow:0 12px 28px rgba(0,0,0,.12);z-index:49}
   [data-theme="dark"] .nav-links{background:#0a0f1f;border-color:#1e3a5f}
   .nav-links.open{transform:none;opacity:1;pointer-events:auto}
   .nav-toggle{display:flex}
   .about-grid,.skills-grid,.projects-grid{grid-template-columns:1fr}
-  .hero{padding:28px 16px 32px}
-  .hero h1{font-size:28px;line-height:1.1}
+  .hero{padding:48px 16px 32px}
+  .hero h1{font-size:28px;line-height:1.1;margin-top:12px}
   .hero-sub{font-size:14px}
   .hero-sub2{font-size:12px}
   .hero-btns{flex-direction:column}
@@ -636,10 +642,12 @@ footer{max-width:none;width:100%;padding:14px 48px;background:#050510;border:non
   .orbit-3{width:220px;height:220px}
   .skill-node span{font-size:9px;padding:4px 8px}
   .mini-grid{grid-template-columns:1fr}
-  .contact-wrap{padding:32px 16px;gap:16px}
-  section{padding:32px 16px}
+  .contact-wrap{padding:40px 16px 56px;gap:24px}
+  section{padding:72px 16px}
+  section + section{margin-top:20px}
   .h2{font-size:22px}
-  .about-layout{gap:16px}
+  .about-layout{gap:32px}
+  .about-grid,.skills-grid,.projects-grid{gap:20px}
   footer{flex-direction:column;gap:8px;text-align:center;padding:14px 16px;font-size:7px}
 }
 @media(max-width:380px){
@@ -968,7 +976,7 @@ footer{max-width:none;width:100%;padding:14px 48px;background:#050510;border:non
 <div class="contact-wrap" id="contact">
   <div>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:2px">
-      <span style="width:36px;height:36px;background:rgba(37,99,235,0.18);color:#60a5fa;border:1px solid rgba(96,165,250,0.28);border-radius:8px;display:grid;place-items:center;flex-shrink:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg></span>
+      <span style="width:36px;height:36px;background:#bfdbfe;color:#1e3a5f;border:1px solid #93c5fd;border-radius:8px;display:grid;place-items:center;flex-shrink:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8"/><path d="M8 13h6"/></svg></span>
       <h3>Let’s connect</h3>
     </div>
     <p>Send me a message or follow my work across the web.</p>
